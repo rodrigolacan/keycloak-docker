@@ -9,3 +9,8 @@ docker run -d --name keycloak \
   -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin \
   keycloak26:v1.0.0 start-dev
 ```
+
+# Comando docker para buildar com buildx
+```bash
+docker buildx build -t  keycloak26:v*.*.* .
+```
