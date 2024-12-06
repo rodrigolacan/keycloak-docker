@@ -1,0 +1,134 @@
+/* Reset básico */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Garante que o kc-content ocupe todo o espaço da div pai */
+#kc-content {
+    width: 100%; /* Ocupa toda a largura da div pai */
+    height: 100%; /* Ocupa toda a altura da div pai */
+    display: flex; /* Caso queira alinhar filhos */
+    flex-direction: column; /* Para manter a estrutura */
+    justify-content: center; /* Centraliza conteúdo verticalmente */
+    align-items: center; /* Centraliza conteúdo horizontalmente */
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
+}
+
+/* Container principal */
+#kc-content-wrapper {
+    background: #ffffff;
+    border-radius: 0 0 10px 10px; /* Remove border-radius no topo, mantêm nas bordas inferiores */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Título */
+#kc-page-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+input[type="text"], 
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #05a0dd;
+}
+
+/* Botão de envio */
+#kc-login {
+    background: #05a0dd;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#kc-login:hover {
+    background: #0284b0;
+}
+
+/* Botão mostrar/ocultar senha */
+button[data-password-toggle] {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+}
+
+/* Campo com botão de senha */
+div[dir="ltr"] {
+    position: relative;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    #kc-content-wrapper {
+        padding: 20px;
+    }
+}
+
+/* Estilização do cabeçalho */
+#kc-header-wrapper {
+    background-color: #062146; /* Cor sólida, alinhada ao branding */
+    padding: 15px 20px; /* Espaçamento interno */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo */
+    border-radius: 10px 10px 0 0; /* Bordas arredondadas no topo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
+}
+
+/* Logo ou texto no cabeçalho */
+.kc-logo-text {
+    font-size: 18px;
+    color: #ffffff; /* Contraste com o fundo escuro */
+    font-weight: bold;
+    text-transform: uppercase; /* Texto em caixa alta */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
