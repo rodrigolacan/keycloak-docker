@@ -10,3 +10,8 @@ docker run -d --name keycloak -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin 
 ```bash
 docker buildx build -t  keycloak26:v*.*.* .
 ```
+
+# Comando para copiar arquivos para o container
+```bash
+docker cp resources\themes\sebrae\login\resources\css\styles.css keycloak:/opt/keycloak/themes/sebrae/login/resources/css/styles.css
+```

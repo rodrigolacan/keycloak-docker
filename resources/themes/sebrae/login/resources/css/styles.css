@@ -1,13 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css');
+
 /* Reset básico */
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+div.kc-logo-text span {
+    display: none;
+}
+
+.kc-video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;  /* Garantir que o vídeo fique atrás do conteúdo */
+    object-fit: cover;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Máscara semi-transparente */
+.kc-video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Cor da máscara */
+    opacity: 0.7; /* Opacidade da máscara */
+    z-index: -1; /* Colocar a máscara acima do vídeo */
 }
 
 /* Garante que o kc-content ocupe todo o espaço da div pai */
@@ -21,10 +59,21 @@ body, html {
     box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
 }
 
+div.kc-logo-text {
+    background-image: url(../img/logo-sebrae-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain; /* Faz a imagem ajustar proporcionalmente ao container */
+    background-position: center; /* Centraliza a imagem dentro da div */
+    height: 63px; /* Altura do container */
+    width: 300px; /* Largura do container */
+    margin: 0 auto;
+}
+
 /* Container principal */
 #kc-content-wrapper {
-    background: #ffffff;
-    border-radius: 0 0 10px 10px; /* Remove border-radius no topo, mantêm nas bordas inferiores */
+    background: #101014; /* Alterado para a cor de fundo desejada */
+    color: #ffffff; /* Cor da fonte alterada para branca */
+    border-radius: 10px; /* Remove border-radius no topo, mantém nas bordas inferiores */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
     max-width: 400px;
@@ -35,7 +84,7 @@ body, html {
 /* Título */
 #kc-page-title {
     font-size: 24px;
-    color: #333;
+    color: #ffffff; /* Cor do título em branco */
     margin-bottom: 20px;
     text-align: center;
 }
@@ -50,7 +99,7 @@ form {
 /* Labels */
 label {
     font-size: 14px;
-    color: #555;
+    color: #ffffff; /* Cor das labels em branco */
     margin-bottom: 5px;
 }
 
@@ -65,27 +114,14 @@ input[type="password"] {
     outline: none;
     box-sizing: border-box;
     transition: border-color 0.3s;
+    color: #ffffff; /* Cor do texto nos campos */
+    background-color: #333333; /* Cor de fundo dos campos */
+    position: relative; /* Definir posição relativa para o alinhamento do botão */
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
     border-color: #05a0dd;
-}
-
-/* Botão de envio */
-#kc-login {
-    background: #05a0dd;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#kc-login:hover {
-    background: #0284b0;
 }
 
 /* Botão mostrar/ocultar senha */
@@ -94,11 +130,38 @@ button[data-password-toggle] {
     border: none;
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 68%;
     transform: translateY(-50%);
     cursor: pointer;
     color: #777;
+    font-size: 16px; /* Ajuste do tamanho da fonte do ícone */
 }
+
+/* Para garantir que o botão tenha o mesmo espaço ao redor que o campo de entrada */
+input[type="password"] {
+    padding-right: 40px; /* Adiciona espaçamento à direita para o botão */
+}
+
+/* Botão de envio */
+#kc-login {
+    background: #05a0dd;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;  /* Faz o botão ter a mesma largura do input */
+    box-sizing: border-box;  /* Garante que o padding não afete a largura do botão */
+    display: block;  /* Faz o botão ser um elemento de bloco, permitindo que ocupe toda a largura */
+    margin: 0 auto;  /* Centraliza o botão no contêiner */
+}
+
+#kc-login:hover {
+    background: #0284b0;
+}
+
 
 /* Campo com botão de senha */
 div[dir="ltr"] {
@@ -114,14 +177,9 @@ div[dir="ltr"] {
 
 /* Estilização do cabeçalho */
 #kc-header-wrapper {
-    background-color: #062146; /* Cor sólida, alinhada ao branding */
-    padding: 15px 20px; /* Espaçamento interno */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centraliza o conteúdo */
-    border-radius: 10px 10px 0 0; /* Bordas arredondadas no topo */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
+    height: 63px;
 }
+
 
 /* Logo ou texto no cabeçalho */
 .kc-logo-text {
@@ -131,4 +189,3 @@ div[dir="ltr"] {
     text-transform: uppercase; /* Texto em caixa alta */
     letter-spacing: 1px; /* Espaçamento entre letras */
 }
-
