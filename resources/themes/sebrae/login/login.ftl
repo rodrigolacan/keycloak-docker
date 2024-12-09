@@ -3,11 +3,6 @@
     <#if section = "header">
         ${msg("loginAccountTitle")}
     <#elseif section = "form">
-        <#assign env = System.getenv("KC_HOSTNAME")>
-
-        <#if env == "lus-homolog.rr.sebrae.com.br">
-            <h1 style="color: red;">Atenção: Você está em ambiente de homologação!</h1>
-        </#if>
         <!-- Vídeo de fundo -->
         <div class="kc-video-background">
             <video autoplay muted loop id="background-video">
