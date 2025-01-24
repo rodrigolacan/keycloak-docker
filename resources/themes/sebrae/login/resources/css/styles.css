@@ -189,3 +189,85 @@ div[dir="ltr"] {
     text-transform: uppercase; /* Texto em caixa alta */
     letter-spacing: 1px; /* Espaçamento entre letras */
 }
+
+/* Estilizando o link de termos de serviço */
+.tos-link {
+    font-size: 0.85rem; /* Reduz o tamanho da fonte */
+    color: #ffffff; /* Cor para melhor legibilidade */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*Botão de sucesso*/
+
+.button-sucess {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-sucess:hover,
+.button-sucess:focus {
+  background-color: #07c;
+}
+
+.button-sucess:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-sucess:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+/* Botão alerta */
+.button-warning {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-warning:hover,
+.button-warning:focus {
+  background-color: #F082AC;
+}
